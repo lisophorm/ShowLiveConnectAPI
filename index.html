@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bower_components/jQuery-Bootstrap-Based-Toast-Notification-Plugin-toaster/jquery.toaster.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/prism/themes/prism.css">
+    <script src="bower_components/prism/prism.js"></script>
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ShowLive Connect interface</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <!-- /.navbar-top-links -->
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+
+                    <li>
+                        <a href="#initialization-tab" class="side-button">Initialization</a>
+                    </li>
+                    <li>
+                        <a href="#clickevent-tab" class="side-button">Click on stands</a>
+                    </li>
+                    <li>
+                        <a href="#focusonstand-tab" class="side-button">Focus on stand</a>
+                    </li>
+                    <li>
+                        <a href="#focusonshow-tab" class="side-button">Focus on show</a>
+                    </li>
+                    <li>
+                        <a href="#onresize-tab" class="side-button">On Resize</a>
+                    </li>
+                    <li>
+                        <a href="#showdata-tab" class="side-button">Get all the show data</a>
+                    </li>
+                    <li>
+                        <a href="#standdata-tab" class="side-button">Get data on a specific stand</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <!--ul class="nav nav-pills">
+                            <li class="active"><a href="#home-pills" data-toggle="tab">Home</a>
+                            </li>
+                            <li><a href="#profile-pills" data-toggle="tab">Profile</a>
+                            </li>
+                            <li><a href="#messages-pills" data-toggle="tab">Messages</a>
+                            </li>
+                            <li><a href="#settings-pills" data-toggle="tab">Settings</a>
+                            </li>
+                        </ul-->
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="initialization-tab">
+                                <h4>Initialization</h4>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                            nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                            aute
+                                            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                            nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia
+                                            deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <pre>var showLiveInterface = new ShowliveInterface('iframe', 'http://localhost');
+showLiveInterface.onReady(function(showData) {
+    console.log("ShowLive Interface ready")
+    console.log('showData:',showData);
+});
+</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="clickevent-tab">
+                                <div class="col-md-12">
+                                    <h4>Click on stand event from Iframe</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis
+                                                nostrud
+                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                Duis aute
+                                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                                fugiat
+                                                nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                                qui
+                                                officia
+                                                deserunt mollit anim id est laborum.</p>
+                                        </div>
+                                        <div class="col-md-6">
+<pre>
+showLiveInterface.onStandClicked(myClickEventHandler);
+
+var myClickEventHandler = function (param1) {
+   console.log('parameters received: ',param1);
+}
+</pre>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary" id="onclickdemobut">Intercept click on stands
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="focusonstand-tab">
+
+                                <div class="col-md-12">
+                                    <h4>Focus on a specific stand</h4>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis
+                                                nostrud
+                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                Duis
+                                                aute
+                                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                                fugiat
+                                                nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                                qui
+                                                officia
+                                                deserunt mollit anim id est laborum.</p>
+                                            <div class="row">
+
+                                                <input id="focusonplotinputlabel" type="text"><label><input type="checkbox"
+                                                                                                            id="focusonplotisanimated"
+                                                                                                            checked="checked">
+                                                is
+                                                animated</label>
+                                                <button class="btn" id="focusonplotbut">Focus Stand on Iframe</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <pre>showLiveInterface.focusOnStand(current, animated);</pre>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="focusonshow-tab">
+
+                                <div class="col-md-12">
+                                    <h4>Focus on show (zoom 100%)</h4>
+                                    <pre>showLiveInterface.focusOnShow();</pre>
+                                    <button id="focusonplanbutton">Focus on plan (zoom out 100%)</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="onresize-tab">
+                                <h4>On Resize Event from Iframe</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.</p>
+                                <pre>showLiveInterface.onResize(onResizeEventHandler);</pre>
+                            </div>
+                            <div class="tab-pane fade" id="showdata-tab">
+                                <h4>Show Data</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                                    <pre>var showData = showLiveInterface.getshowData();</pre>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="standdata-tab">
+
+
+                                <h4>Stand Data</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                                    <pre>var standData = showLiveInterface.getStandData(standID);</pre>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        ShowLive embeddable IFRAME
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="http://localhost/showhub-live/showlive-embeddable" id="iframe"
+                                    class="embed-responsive-item"></iframe>
+                        </div>
+
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+    </div>
+</div>
+
+<script src="library.js"></script>
+<script type="text/javascript">
+    // $.toaster({ settings : {...} });
+    $('#pulso').click(function () {
+        console.log('click');
+        iframe.postMessage({message: 'init'}, 'http://localhost');
+    })
+    $('#onclickdemobut').click(function () {
+        $.toaster('Function assigned to click on stand event', 'Callback assigned', 'danger');
+        showLiveInterface.onStandClicked(myClickEventHandler);
+    });
+    $('#focusonplotbut').click(function () {
+        var current = $('#focusonplotinputlabel').val();
+        if ($('#focusonplotisanimated').is(':checked')) {
+            var animated = true;
+        } else {
+            var animated = false;
+        }
+        console.log('focus on plot input label:', current);
+        console.log('animated', animated);
+        showLiveInterface.focusOnStand(current, animated);
+    });
+    $('#getplotdata').click(function () {
+        var current = $('#getplotdatainputlabel').val();
+
+        console.log('focus on plot input label:', current);
+
+        var standData = showLiveInterface.getStandData(current);
+        console.log(standData);
+    });
+    $('#focusonplanbutton').click(function () {
+        console.log('click focusonplan');
+        showLiveInterface.focusOnShow();
+    });
+    $('#getplandatabutton').click(function () {
+        console.log(showLiveInterface.getPlanData());
+    })
+
+    var myClickEventHandler = function (param1) {
+        console.log('clicca clak parameters:');
+        console.log(param1);
+        $.toaster('Data received: ' + param1, 'Event from map', 'info');
+    }
+
+    $('.side-button').click(function () {
+        console.log($(this).attr('href'));
+        var link = $(this).attr('href');
+        $('.tab-pane').removeClass('active');
+        $('.tab-pane').removeClass('in');
+        $(link).addClass('active in');
+        return false;
+    });
+
+
+</script>
+</body>
+</html>
